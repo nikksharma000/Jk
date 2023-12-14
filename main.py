@@ -42,7 +42,7 @@ EMOJIOS = [
 ]
       
 START = f"""
-**๏ Hie Baby🐒 ๏**
+๏ Hie Baby🐒 ๏
 """
 
 @bot.on_message(filters.command(["start", "aistart", f"start@{BOT_USERNAME}"]))
@@ -59,11 +59,11 @@ async def restart(client, m: Message):
     await asyncio.sleep(0.1)
     await accha.edit("╔═══❰𝐖𝐄𝐋𝐂𝐎𝐌𝐄❱═══❍⊱❁۪۪\n║\n║➣\n║\n║➣\n║\n║➣\n║\n╚══════ஜ۩۞۩ஜ═════╝")
     await asyncio.sleep(0.2)
-    await accha.edit("╔═══❰𝐖𝐄𝐋𝐂𝐎𝐌𝐄❱═══❍⊱❁۪۪\n║\n║➣ @THE_VIP_BOY\n║\n║➣\n║\n║➣\n║\n╚══════ஜ۩۞۩ஜ═════╝")
+    await accha.edit("╔═══❰𝐖𝐄𝐋𝐂𝐎𝐌𝐄❱═══❍⊱❁۪۪\n║\n║➣ @GomuMusicbot\n║\n║➣\n║\n║➣\n║\n╚══════ஜ۩۞۩ஜ═════╝")
     await asyncio.sleep(0.2)
-    await accha.edit("╔═══❰𝐖𝐄𝐋𝐂𝐎𝐌𝐄❱═══❍⊱❁۪۪\n║\n║➣ @THE_VIP_BOY\n║\n║➣ @TG_FRIENDSS\n║\n║➣\n║\n╚══════ஜ۩۞۩ஜ═════╝")
+    await accha.edit("╔═══❰𝐖𝐄𝐋𝐂𝐎𝐌𝐄❱═══❍⊱❁۪۪\n║\n║➣ @GomuMusicbot\n║\n║➣ @GROUP_LlNKS\n║\n║➣\n║\n╚══════ஜ۩۞۩ஜ═════╝")
     await asyncio.sleep(0.2)
-    await accha.edit("╔═══❰𝐖𝐄𝐋𝐂𝐎𝐌𝐄❱═══❍⊱❁۪۪\n║\n║➣ @THE_VIP_BOY\n║\n║➣ @TG_FRIENDSS\n║\n║➣ @VIP_CREATORS\n║\n╚══════ஜ۩۞۩ஜ═════╝")
+    await accha.edit("╔═══❰𝐖𝐄𝐋𝐂𝐎𝐌𝐄❱═══❍⊱❁۪۪\n║\n║➣ @GomuMusicbot\n║\n║➣ @GROUP_LlNKS\n║\n║➣ @GROUP_LlNKS\n║\n╚══════ஜ۩۞۩ஜ═════╝")
      
 
 @bot.on_message(
@@ -116,8 +116,7 @@ async def chatboton(client, message):
     filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"], prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatbot(client, message):
-    await message.reply_text(f"**ᴜsᴀɢᴇ:**\n/**chatbot [on/off]**\n**ᴄʜᴀᴛ-ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅ(s) ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!**")
-
+    await message.reply_text(f"ᴜsᴀɢᴇ:\n/chatbot [on/off]\nᴄʜᴀᴛ-ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅ(s) ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!")
 
 @bot.on_message(
  (
@@ -213,7 +212,8 @@ async def vickstickerai(client: Client, message: Message):
                hey = random.choice(K)
                is_text = chatai.find_one({"text": hey})
                Yo = is_text['check']
-               if Yo == "text":
+
+if Yo == "text":
                    await message.reply_text(f"{hey}")
                if not Yo == "text":
                    await message.reply_sticker(f"{hey}")
@@ -309,8 +309,9 @@ async def vickprivatesticker(client: Client, message: Message):
    chatai = chatdb["Word"]["WordDb"] 
    if not message.reply_to_message:
        await bot.send_chat_action(message.chat.id, "typing")
-       K = []  
-       is_chat = chatai.find({"word": message.sticker.file_unique_id})                 
+       K = []
+
+is_chat = chatai.find({"word": message.sticker.file_unique_id})                 
        for x in is_chat:
            K.append(x['text'])
        hey = random.choice(K)
